@@ -44,7 +44,7 @@ function mySearch(valueOfSelect) {
     }
 
     if (!notFound) {
-        windows.alert('net sovpadeniy');
+        window.alert('net sovpadeniy');
     }
 }
 
