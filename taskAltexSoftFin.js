@@ -32,9 +32,11 @@ for (let i = 0; i <= 4; i++) {
 
 console.log(arrletter);
 
-let notFound = false;
+
 
 function mySearch(valueOfSelect) {
+    let notFound = false;
+
     for (let i = 0; i < clients.length; i++) {
         oneLetterNameClient = clients[i].name[0];
         if (oneLetterNameClient === valueOfSelect) {
@@ -42,9 +44,8 @@ function mySearch(valueOfSelect) {
             notFound = true
         } 
     }
-
     if (!notFound) {
-        window.alert('net sovpadeniy');
+        window.alert('data not found');
     }
 }
 
