@@ -3,20 +3,31 @@ let oneLetterNameClient;
 
 let select = document.getElementById('arrLetter');
 let buttonSearch = document.getElementById('buttonSearch');
+let buttonClear = document.getElementById('buttonClear');
 let list = document.getElementById('listName');
+
+buttonClear.addEventListener('click', delitList);
 
 function buttonClick() {
     let selectValue = select.options[select.selectedIndex].value;
     mySearch(selectValue);
+    
 }
 
 function addListName(name) {
-        let content = name;
-        let addElement = document.createElement('li');
-        addElement.textContent = content;
-        list.appendChild(addElement);
+    let content = name;
+    let addElement = document.createElement('li');
+    addElement.textContent = content;
+    list.appendChild(addElement);
+    
 }
 
+function delitList() {
+    let element = document.querySelectorAll('#listName li');
+    for (let i = 0; i < element.length; i++) {
+        element[i].parentNode.removeChild(element[i]);     
+    }
+}
 
 
 function pushHTMLSelect() {
