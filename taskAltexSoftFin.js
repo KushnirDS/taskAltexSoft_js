@@ -3,10 +3,8 @@ let oneLetterNameClient;
 
 let select = document.getElementById('arrLetter');
 let buttonSearch = document.getElementById('buttonSearch');
-let buttonClear = document.getElementById('buttonClear');
-let list = document.getElementById('listName');
 
-buttonClear.addEventListener('click', delitList);
+let list = document.getElementById('listName');
 
 function buttonClick() {
     let selectValue = select.options[select.selectedIndex].value;
@@ -15,20 +13,16 @@ function buttonClick() {
 }
 
 function addListName(name) {
+    let element = document.querySelectorAll('#listName li');
+    for (let i = 0; i < element.length; i++) {
+        element[i].parentNode.removeChild(element[i]);
+    }    
     let content = name;
     let addElement = document.createElement('li');
     addElement.textContent = content;
     list.appendChild(addElement);
     
 }
-
-function delitList() {
-    let element = document.querySelectorAll('#listName li');
-    for (let i = 0; i < element.length; i++) {
-        element[i].parentNode.removeChild(element[i]);     
-    }
-}
-
 
 function pushHTMLSelect() {
     for (let i = 0; i < arrletter.length; i++) {
@@ -67,7 +61,7 @@ function mySearch(valueOfSelect) {
         } 
     }
     if (!notFound) {
-        window.alert('data not found');
+        addListName('Data not found');
     }
 }
 
