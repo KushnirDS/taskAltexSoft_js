@@ -33,6 +33,7 @@ function pushHTMLSelect() {
         select.appendChild(addElement);
     }
 }
+
 //random number
 function myRandom(min, max) {
     let randomToLimit = Math.round(min + Math.random() * (max - min));
@@ -69,4 +70,9 @@ function mySearch(valueOfSelect) {
 
 // window.alert('Id:' + ' ' + clients[1]._id + ' ' + 'Name:' + ' ' + clients[1].name)
 pushHTMLSelect();
-buttonSearch.addEventListener('click', buttonClick);
+// buttonSearch.addEventListener('click', buttonClick);
+// mySearch (select.options[select.selectedIndex].value);
+
+// let searchElement = select.options.selectedIndex;
+// let txt = select.options[searchElement].text;
+// console.log(txt);
